@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0); /* 완전 투명하되 Electron이 인식하도록 */
+    position: relative; /* 자식 요소들 위치 기준 */
+    overflow: hidden;
+}
+
+#pet {
+    max-width: 100%;
+    max-height: 100%;
+    user-select: none;
+    cursor: grab;
+    -webkit-user-drag: none;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 상태창 */
+#status-window {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 260px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    border-radius: 10px;
+    z-index: 10;
+    display: none;
+}
+
+.status-bar {
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.status-fill {
+    height: 100%;
+    background-color: #4caf50;
+}
