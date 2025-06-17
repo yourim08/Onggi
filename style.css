@@ -1,7 +1,6 @@
 body {
     margin: 0;
-    background-color: rgba(0, 0, 0, 0); /* 완전 투명하되 Electron이 인식하도록 */
-    position: relative; /* 자식 요소들 위치 기준 */
+    background: transparent;
     overflow: hidden;
 }
 
@@ -11,35 +10,30 @@ body {
     user-select: none;
     cursor: grab;
     -webkit-user-drag: none;
-    width: 300px;
-    height: 300px;
-    position: relative;
-    z-index: 1;
+    width: 200px;
+    height: 200px;
 }
 
-/* 상태창 */
 #status-window {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 260px;
-    padding: 10px;
+    top: 20px;
+    left: 220px;
     background-color: rgba(255, 255, 255, 0.9);
-    border: 2px solid #333;
-    border-radius: 10px;
-    z-index: 10;
-    display: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    pointer-events: auto;
+    z-index: 1000;
+    display: block; /* 기본 표시 상태 */
 }
 
-.status-bar {
-    height: 10px;
-    background-color: #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 5px;
+#status-window.hidden {
+    display: none; /* 숨김 시 완전히 제거 */
 }
 
-.status-fill {
-    height: 100%;
-    background-color: #4caf50;
+#playtime-text {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+    font-family: monospace;
 }

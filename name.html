@@ -1,0 +1,24 @@
+<!-- name.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이름 입력</title>
+</head>
+<body>
+<h2>이름을 입력하세요</h2>
+<input type="text" id="nameInput" placeholder="이름">
+<button id="submitBtn">확인</button>
+
+<script>
+    const { ipcRenderer } = require('electron');
+
+    document.getElementById('submitBtn').addEventListener('click', () => {
+        const name = document.getElementById('nameInput').value.trim();
+        if (name) {
+            ipcRenderer.send('save-user-name', name);
+        }
+    });
+</script>
+</body>
+</html>

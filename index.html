@@ -6,30 +6,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<img id="pet" src="images/cat_sit.gif" alt="pet">
+    <img id="pet" src="images/main_level1.gif" alt="pet">
 
 <!-- 상태창 -->
-<div id="status-window" class="hidden">
-    <h3>😺 상태 보기</h3>
-    <div class="status-item">
-        <label>포만감</label>
-        <progress id="hunger" max="100" value="60"></progress>
+    <div id="status-window" class="hidden">
+        <p id="user-name-display"></p>
+        <div class="status-item">
+            <label>포만감</label>
+            <progress id="hunger" max="100" value="0"></progress>
+        </div>
+        <div class="status-item">
+            <label>호감도</label>
+            <progress id="affection" max="100" value="0"></progress>
+        </div>
+        <div class="status-item">
+            <div id="growth-text">성장 단계: 1단계</div>
+        </div>
+        <div class="status-item">
+            <label>플레이 타임</label>
+            <span id="playtime-text">0일 0시 0분</span>
+        </div>
+        <button id="close-status">닫기</button>
     </div>
-    <div class="status-item">
-        <label>호감도</label>
-        <progress id="affection" max="100" value="80"></progress>
-    </div>
-    <div class="status-item">
-        <label>성장도</label>
-        <progress id="growth" max="100" value="30"></progress>
-    </div>
-    <div class="status-item">
-        <label>플레이 타임</label>
-        <progress id="playtime" max="100" value="50"></progress>
-    </div>
-    <button id="close-status">닫기</button>
-</div>
 
-<script src="renderer.js"></script>
+    <script src="renderer.js"></script>
 </body>
 </html>
